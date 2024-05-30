@@ -35,4 +35,10 @@ Note that the execution of this program will never terminate
 ![example of a recursive constructor invocation](/images/recursiveconstructorchaining.png)
 
 #### 2. Constructor call must be the first statement in a constructor
-any time we use _this_ keyword we need to 
+any time we use _this_ keyword we need to call  _**this**_ keyword first before any other line fo code 
+failure to this throws the constructor call must be a first statement in a constructor
+### 3. Explicit Constructor call error
+Expilict constructor error is thrown when  we try to use more than one _**this**_ method in a constructor
+
+
+* [application of constructor chaininng](/src/main/java/oauth/example/ApplicationOFConstructorChaining.java)
