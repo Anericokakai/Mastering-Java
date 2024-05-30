@@ -40,5 +40,6 @@ failure to this throws the constructor call must be a first statement in a const
 ### 3. Explicit Constructor call error
 Expilict constructor error is thrown when  we try to use more than one _**this**_ method in a constructor
 
-
+## Application of constructor chaining
+Click the link below to check an example where constructor chaining is used 
 * [application of constructor chaininng](/src/main/java/oauth/example/ApplicationOFConstructorChaining.java)
