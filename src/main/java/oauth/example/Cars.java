@@ -1,16 +1,16 @@
 package oauth.example;
 
 public class Cars {
-    Cars (){
-        System.out.println("this is the default constructor");
-    }
-    Cars (int num){
-        System.out.println("this the second constructor");
+    String name;
+    String color;
+    int year;
+    Cars(String name,String color,int year){
+        this.name=name;
+        this.color=color;
+        this.year=year;
     }
 
-    public static void main(String[] args) {
-//  call th constructors while creating object
-        Cars cars=new Cars();
-        Cars cars2=new Cars(10);
+    public void  printCarInformation(){
+        System.out.println("Name: "+name +" Color: "+color+" Year: "+year);
     }
 }
