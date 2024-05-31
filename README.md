@@ -107,4 +107,37 @@ Constructor<?>[] constructors = cars.getConstructors();
 
 ```
 
-### 3. ``Getting All Constructor``
+### 3. ``Getting Private constructor ``
+To access the private constructors we need to use the ``getDeclaredConstructor()`` method
+
+The method also takes in an array of  ParameterTypes  classess that represents the constructor we want to access 
+```java
+Constructor<?>  privateConstructor=cars.getDeclaredConstructor();
+        System.out.println(privateConstructor.toString());
+
+        
+```
+In our case we don't have any parameters in our private constructor [check it out here](/src/main/java/oauth/example/Games.java)
+,that why we never passed ``parameterTypes`` unlike what we did [here](#1-getting-a-single-constructor)
+
+
+### 3. ``Getting all public private default access,protected constructors``
+
+In reflection, we are able to overide all the rules that are protecting our classes from being accessed in other classes
+.When a constructor is private it is not accessible in other classes ,but when using reflection you can override this rule
+and access private constructors in other classes
+
+To learn more about scopes visit this branch [scopes in java]()
+
+To get all constructors with different scopes we use the ``getDeclaredConstructors`` which we must initialise as an array  of constructors
+
+### _Exception handling in reflection_
+
+1. ``ClassNotFoundEsception``
+This is thrown by the ``Class.forName()`` method is the class does not exist
+
+2. ``MethodNotFoundException``
+The ``MethodNotFoundException`` is thrown by the ``getConstructor()`` and [getDeclaredConstructor()](#3-getting-private-constructor-)
+
+If you want to learn more about Exceptions in java  go to the [exceptionHandlingInJava](https://github.com/Anericokakai/Mastering-Java/tree/exceptionHandlingInJava) branch
+
