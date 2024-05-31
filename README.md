@@ -34,10 +34,14 @@ The methods are examples of [behavior examples here](#_behavior-examples_)
 #### Creating Objects of the class
 ![Example of creating o=Objects](/images/MainExample.png)
 
+If you don't know how to create Objects Instances in Java check out [Object Creation In Java](https://github.com/Anericokakai/Mastering-Java/tree/ObjectCreationInJava)
+
 >**_NOTE :_** The method that allows us to print the information below is the `printCar`  method.If you dont know about methods Check out [methods in java]() 
   
 
 Note that when we run the `Main` we get the following results
+
+The First result is the information of the ``bmw`` Instance we created of a ``Car`` while the second one is of the ``Toyota`` instance of the ``Car`` class
 ![example terminal print](/images/resExample.png)
 
 
