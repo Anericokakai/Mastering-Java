@@ -23,6 +23,31 @@ example if a class
 The variables are examples of [states examples here](#_example-of-states_)
 
 The methods are examples of [behavior examples here](#_behavior-examples_)
+#### Declaring a class 
+
+```java
+class MyClass{
+//    variables constructors and mthod
+}
+```
+> **_NOTE:_** if you are creating a class File the name should match with the name of your class
+   
+#### Declaring Members variables 
+Members of a class are the  states 
+example 
+```java
+public  int age;
+public  String  name;
+```
+The ``Public`` is an access modifier  
+
+### Access Modifiers
+Access modifiers lets you control what other classes can see of you class
+
+1. ``public`` allows the fields to be accessed from other classes
+2. ``private`` fields with private are ony accessed within our class
+
+If you want more on access modifiers check the [Encapsulation in Java]()
 
 #### Example of a class
 
