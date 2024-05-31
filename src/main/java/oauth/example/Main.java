@@ -6,13 +6,23 @@ package oauth.example;
 public class Main {
 
 public  static void main(String[] args) {
+//    Create  objects of car
+ Car bmw=new Car();
+ Car toyota=new Car();
 
-    Cars bmw=new Cars("BMW m5 competion","black",2023);
-    Cars mercedes= new Cars("S63s","white",2020);
+//We use the methods(behaviors) in that class to  change the variables(states))
+ bmw.changeColor("yellow");
+ bmw.changeName("bmw");
+ bmw.ChangeModel("2023 x5");
+ bmw.ChangePrice(50_000.00);
+ bmw.printCar();
 
-    bmw.printCarInformation();
-
-    mercedes.printCarInformation();
+// Another instance of the Object Car
+ toyota.changeColor("white");
+ toyota.changeName("toyota");
+ toyota.ChangeModel("2023 xl 570");
+ toyota.ChangePrice(80_000.00);
+ toyota.printCar();
 
 }
 

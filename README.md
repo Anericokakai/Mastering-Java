@@ -1,44 +1,48 @@
+# Core Concepts In Java 
+To understand java we need to understand the core concepts that java builds from
+## 1. What is an Object
+Objects in ``OOP`` are similar to real world ,They have ``state `` and  ``behavior``
+.States are stored in ``variables``  while ``behavior`` are exposed through ``methods or functions``
 
-# Object creation in Java
+###### **_Example of states_**
+state of an object can be ``color``,``price`` ,``name``,``model``
 
-## 1. Using the _new_ keyword
+###### **_Behavior examples_**
+Example of behaviors/ actions can be ``run engine``,``beeb horn``,``reverse``
 
-The new keyword is the basic ways of creating an object in java
+### Why Objects are important
+1. Code reusability ->Objects that already exists can be re-used by other developers
+2. Easy debug
+3. Modularity-> each Object is independent and can be maintained and improved independently
 
->It is used if we know the types of objects to be created 
 
-If we have a class in java, and we want to create an instance of the class in another class we need to create an instance of that class where 
-we want to use it
-the constructor enables us to create different instances of the same class just as we learned in [constructor chaining class ](https://github.com/Anericokakai/Mastering-Java/blob/constructorChaining/src/main/java/oauth/example/ApplicationOFConstructorChaining.java)
+# Classes
+A Class is an instance of an Object 
+example if a class 
 
-***
-### Example of new keyword in Action
+The variables are examples of [states examples here](#_example-of-states_)
 
-If we have a class called **_Cars_** and the car has different properties such as year,name and color
-,We also have another class **_Main_** where we want to create an instance of the **_cars_** class
+The methods are examples of [behavior examples here](#_behavior-examples_)
 
-##### cars class code example
+#### Example of a class
 
-![image example](/images/cars.png)
+>Note that there is no main method here because the ``Car`` class  is only a blu print and it will be used in an application in our case the `Main`
 
-[check the code here](/src/main/java/oauth/example/Cars.java)
+![ Example of class](/images/ClassExample.png)
+[Check out the example here](/src/main/java/oauth/example/Car.java)
 
-We create public variables that are the properties that our cars will have
-the cars
-**NOTE:** we can create more than one constructor as long as we dont use the same number of parameters or types
+#### Creating Objects of the class
+![Example of creating o=Objects](/images/MainExample.png)
 
-[check out this example ](https://github.com/Anericokakai/Mastering-Java/blob/constructorChaining/src/main/java/oauth/example/Cars.java)
+If you don't know how to create Objects Instances in Java check out [Object Creation In Java](https://github.com/Anericokakai/Mastering-Java/tree/ObjectCreationInJava)
 
-##### creating instances of the car Object
-in our main method [here](/src/main/java/oauth/example/Main.java)  we create two instances of the **_Cars_** class **NOTE:** we are using the **_new_** keyword before the car class
+>**_NOTE :_** The method that allows us to print the information below is the `printCar`  method.If you dont know about methods Check out [methods in java]() 
+  
 
-![example of main method](/images/main.png)
+Note that when we run the `Main` we get the following results
 
-When you create an instance of an Object you are also able to access all the Public methods that are in that Object
-, in our case we are able to access the ``printCarInformation`` method from the bmw and mercedes instances 
+The First result is the information of the ``bmw`` Instance we created of a ``Car`` while the second one is of the ``Toyota`` instance of the ``Car`` class
+![example terminal print](/images/resExample.png)
 
-#### NOTE
 
->Only public methods and variables can be access in another class
 
-***
