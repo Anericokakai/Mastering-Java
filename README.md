@@ -1,48 +1,99 @@
-# Core Concepts In Java 
-To understand java we need to understand the core concepts that java builds from
-## 1. What is an Object
-Objects in ``OOP`` are similar to real world ,They have ``state `` and  ``behavior``
-.States are stored in ``variables``  while ``behavior`` are exposed through ``methods or functions``
+# Generics in Java
+Generics allows Types ,Classes and interfaces to be passed as paramters when defining interfaces classess and methods
 
-###### **_Example of states_**
-state of an object can be ``color``,``price`` ,``name``,``model``
+It allows code reusability with different inputs.
 
-###### **_Behavior examples_**
-Example of behaviors/ actions can be ``run engine``,``beeb horn``,``reverse``
+##### example generic
 
-### Why Objects are important
-1. Code reusability ->Objects that already exists can be re-used by other developers
-2. Easy debug
-3. Modularity-> each Object is independent and can be maintained and improved independently
+```java
+import java.util.ArrayList;
+import java.util.List;
+
+class GenericsExample{
+    public static void main(String[] args) {
+        List<String> myList = new ArrayList<>();
+        myList.add("Anerico kakai");
+        String  user2=myList.getFirst();
+        System.out.println(user2);
+    }
+
+}
+```
+run `GenericsExample` or checkout the implementation [here](/src/main/java/oauth/example/GenericsExample.java)
+Note that we are passing ``<String>`` as a generic to the ``List`` interface .
+Java is able to know that anything we pass to the arrayList is a String and we don't have to type check while accessing items in the list
+
+##### Example without Generics
+```java
+public static void main(String[] args) {
+    List myList=new ArrayList();
+    myList.add("john");
+    String  user1= (String) myList.get(0);
+    System.out.println(user1);
+}
+```
+
+## Generics in classes
+
+If we want to reuse a class that can have different types
+to create a generic class we use ``<T>``
+before the cally braces .``T`` stands for type which can be a class, interface or a **non-primitive** dataType
+
+>We donr pass primitive data types in generics
 
 
-# Classes
-A Class is an instance of an Object 
-example if a class 
+##### Example of a generics class
 
-The variables are examples of [states examples here](#_example-of-states_)
+```java
+class GenericExample<T>{
+    T anything;
+    
+    GenericExample(T anything){
+        this.anything=anything;
+    }
+}
+```
+We are passing t as a parameter the ``T`` is kind of your dataType, if you want to pass more types seperate them by a comma
 
-The methods are examples of [behavior examples here](#_behavior-examples_)
+##### Example with multiple paramters
+```java
+class  GenericExample<T,V>{
+    T something;
+    V anything;
+    GenericExample(T something,V anything){
+        this.anything=anything;
+        this.something=something;
+        
+    }
+    void printInfo(){
+        System.out.println("Something\t"+something);
+        System.out.println("\t anything\t"+anything);
+    }
+}
+```
 
-#### Example of a class
+checkout example [here](/src/main/java/oauth/example/GenericClass.java)
+and its Object Creation [here](/src/main/java/oauth/example/GenericsMain.java)
 
->Note that there is no main method here because the ``Car`` class  is only a blu print and it will be used in an application in our case the `Main`
+### Creating a generic Object
+When Creating a generic Object, we can pass anything inside the ``<>`` as long as it not a primitive data type
 
-![ Example of class](/images/ClassExample.png)
-[Check out the example here](/src/main/java/oauth/example/Car.java)
+##### Example
+```java
+public static void main(String[] args) {
+    genericExample<String> genericString=new GenericExample<>("Hello there");
+    
+    genericExample<Integer> genericInt=new GenericExample<>(30);
+}
+```
 
-#### Creating Objects of the class
-![Example of creating o=Objects](/images/MainExample.png)
+### emaple with [with multiple paramters](#example-with-multiple-paramters)
+```java
+public static void main(String[] args) {
 
-If you don't know how to create Objects Instances in Java check out [Object Creation In Java](https://github.com/Anericokakai/Mastering-Java/tree/ObjectCreationInJava)
-
->**_NOTE :_** The method that allows us to print the information below is the `printCar`  method.If you dont know about methods Check out [methods in java]() 
-  
-
-Note that when we run the `Main` we get the following results
-
-The First result is the information of the ``bmw`` Instance we created of a ``Car`` while the second one is of the ``Toyota`` instance of the ``Car`` class
-![example terminal print](/images/resExample.png)
-
+    Car<String,Integer> bmw=new Car<>("Bmw x5",3_000_000);
+    Car<Integer,Integer> mercedes= new Car<>(5_000_00,2024);
+}
+```
 
 
