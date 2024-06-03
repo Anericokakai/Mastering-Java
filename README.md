@@ -1,73 +1,99 @@
-# Core Concepts In Java 
-To understand java we need to understand the core concepts that java builds from
-## 1. What is an Object
-Objects in ``OOP`` are similar to real world ,They have ``state `` and  ``behavior``
-.States are stored in ``variables``  while ``behavior`` are exposed through ``methods or functions``
+# Generics in Java
+Generics allows Types ,Classes and interfaces to be passed as paramters when defining interfaces classess and methods
 
-###### **_Example of states_**
-state of an object can be ``color``,``price`` ,``name``,``model``
+It allows code reusability with different inputs.
 
-###### **_Behavior examples_**
-Example of behaviors/ actions can be ``run engine``,``beeb horn``,``reverse``
-
-### Why Objects are important
-1. Code reusability ->Objects that already exists can be re-used by other developers
-2. Easy debug
-3. Modularity-> each Object is independent and can be maintained and improved independently
-
-
-# Classes
-A Class is an instance of an Object 
-example if a class 
-
-The variables are examples of [states examples here](#_example-of-states_)
-
-The methods are examples of [behavior examples here](#_behavior-examples_)
-#### Declaring a class 
+##### example generic
 
 ```java
-class MyClass{
-//    variables constructors and mthod
+import java.util.ArrayList;
+import java.util.List;
+
+class GenericsExample{
+    public static void main(String[] args) {
+        List<String> myList = new ArrayList<>();
+        myList.add("Anerico kakai");
+        String  user2=myList.getFirst();
+        System.out.println(user2);
+    }
+
 }
 ```
-> **_NOTE:_** if you are creating a class File the name should match with the name of your class
-   
-#### Declaring Members variables 
-Members of a class are the  states 
-example 
+run `GenericsExample` or checkout the implementation [here](/src/main/java/oauth/example/GenericsExample.java)
+Note that we are passing ``<String>`` as a generic to the ``List`` interface .
+Java is able to know that anything we pass to the arrayList is a String and we don't have to type check while accessing items in the list
+
+##### Example without Generics
 ```java
-public  int age;
-public  String  name;
+public static void main(String[] args) {
+    List myList=new ArrayList();
+    myList.add("john");
+    String  user1= (String) myList.get(0);
+    System.out.println(user1);
+}
 ```
-The ``Public`` is an access modifier  
 
-### Access Modifiers
-Access modifiers lets you control what other classes can see of you class
+## Generics in classes
 
-1. ``public`` allows the fields to be accessed from other classes
-2. ``private`` fields with private are ony accessed within our class
+If we want to reuse a class that can have different types
+to create a generic class we use ``<T>``
+before the cally braces .``T`` stands for type which can be a class, interface or a **non-primitive** dataType
 
-If you want more on access modifiers check the [Encapsulation in Java]()
+>We donr pass primitive data types in generics
 
-#### Example of a class
 
->Note that there is no main method here because the ``Car`` class  is only a blu print and it will be used in an application in our case the `Main`
+##### Example of a generics class
 
-![ Example of class](/images/ClassExample.png)
-[Check out the example here](/src/main/java/oauth/example/Car.java)
+```java
+class GenericExample<T>{
+    T anything;
+    
+    GenericExample(T anything){
+        this.anything=anything;
+    }
+}
+```
+We are passing t as a parameter the ``T`` is kind of your dataType, if you want to pass more types seperate them by a comma
 
-#### Creating Objects of the class
-![Example of creating o=Objects](/images/MainExample.png)
+##### Example with multiple paramters
+```java
+class  GenericExample<T,V>{
+    T something;
+    V anything;
+    GenericExample(T something,V anything){
+        this.anything=anything;
+        this.something=something;
+        
+    }
+    void printInfo(){
+        System.out.println("Something\t"+something);
+        System.out.println("\t anything\t"+anything);
+    }
+}
+```
 
-If you don't know how to create Objects Instances in Java check out [Object Creation In Java](https://github.com/Anericokakai/Mastering-Java/tree/ObjectCreationInJava)
+checkout example [here](/src/main/java/oauth/example/GenericClass.java)
+and its Object Creation [here](/src/main/java/oauth/example/GenericsMain.java)
 
->**_NOTE :_** The method that allows us to print the information below is the `printCar`  method.If you dont know about methods Check out [methods in java]() 
-  
+### Creating a generic Object
+When Creating a generic Object, we can pass anything inside the ``<>`` as long as it not a primitive data type
 
-Note that when we run the `Main` we get the following results
+##### Example
+```java
+public static void main(String[] args) {
+    genericExample<String> genericString=new GenericExample<>("Hello there");
+    
+    genericExample<Integer> genericInt=new GenericExample<>(30);
+}
+```
 
-The First result is the information of the ``bmw`` Instance we created of a ``Car`` while the second one is of the ``Toyota`` instance of the ``Car`` class
-![example terminal print](/images/resExample.png)
+### emaple with [with multiple paramters](#example-with-multiple-paramters)
+```java
+public static void main(String[] args) {
 
+    Car<String,Integer> bmw=new Car<>("Bmw x5",3_000_000);
+    Car<Integer,Integer> mercedes= new Car<>(5_000_00,2024);
+}
+```
 
 
