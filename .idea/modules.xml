@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ClassesInJava/ClassesInJava.iml" filepath="$PROJECT_DIR$/ClassesInJava/ClassesInJava.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ObjectCreationInJava/ObjectCreationInJava.iml" filepath="$PROJECT_DIR$/ObjectCreationInJava/ObjectCreationInJava.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ReflectionInJava/ReflectionInJava.iml" filepath="$PROJECT_DIR$/ReflectionInJava/ReflectionInJava.iml" />
+      <module fileurl="file://$PROJECT_DIR$/constructorChaining/constructorChaining.iml" filepath="$PROJECT_DIR$/constructorChaining/constructorChaining.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dependencyInjection/dependencyInjection.iml" filepath="$PROJECT_DIR$/dependencyInjection/dependencyInjection.iml" />
+      <module fileurl="file://$PROJECT_DIR$/exceptionHandlingInJava/exceptionHandlingInJava.iml" filepath="$PROJECT_DIR$/exceptionHandlingInJava/exceptionHandlingInJava.iml" />
+      <module fileurl="file://$PROJECT_DIR$/genericsInJava/genericsInJava.iml" filepath="$PROJECT_DIR$/genericsInJava/genericsInJava.iml" />
+    </modules>
+  </component>
+</project>
